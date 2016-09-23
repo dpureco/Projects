@@ -75,6 +75,7 @@
       <object>objects\obj_door</object>
       <object>objects\obj_wall</object>
       <object>objects\obj_input</object>
+      <object>objects\obj_projectile</object>
     </objects>
     <objects name="Player Objects">
       <object>objects\obj_player</object>
