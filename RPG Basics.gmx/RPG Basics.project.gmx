@@ -56,15 +56,25 @@
       <script>scripts\scr_get_input.gml</script>
       <script>scripts\scr_chance.gml</script>
     </scripts>
+    <scripts name="Speaking scripts">
+      <script>scripts\scr_string_copy_words.gml</script>
+    </scripts>
+    <script>scripts\scr_save_game.gml</script>
+    <script>scripts\scr_load_game.gml</script>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shader0.shader</shader>
+  </shaders>
   <objects name="objects">
     <objects name="Helper Objects">
+      <object>objects\obj_pause_menu</object>
       <object>objects\obj_damage</object>
       <object>objects\obj_view</object>
       <object>objects\obj_dash_effect</object>
       <object>objects\obj_lifeform_parent</object>
       <object>objects\obj_door</object>
       <object>objects\obj_wall</object>
+      <object>objects\obj_input</object>
     </objects>
     <objects name="Player Objects">
       <object>objects\obj_player</object>
@@ -77,13 +87,16 @@
       <object>objects\obj_expr</object>
       <object>objects\obj_health</object>
     </objects>
-    <object>objects\obj_speaker</object>
-    <object>objects\obj_dialog</object>
-    <object>objects\obj_sign</object>
+    <objects name="Speak Objects">
+      <object>objects\obj_speaker</object>
+      <object>objects\obj_dialog</object>
+      <object>objects\obj_sign</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_one</room>
     <room>rooms\rm_two</room>
+    <room>rooms\rm_pause</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
