@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Initial Constants
+if (instance_number(obj_player) &gt; 1) instance_destroy();
 event_inherited();
 phy_bullet=true;
 spd = 2;
@@ -39,7 +40,8 @@ attacked = false;
 image_speed = 0;
 state = scr_move_state;
 face = RIGHT;
-movemet = MOVE;
+movement = MOVE;
+weapon_sprite = spr_sword;
 
 // Create the sprite array
 sprite[RIGHT, MOVE] = spr_player_right;
@@ -135,6 +137,7 @@ if (obj_player_stats.hp &lt;= 0) {
 // Destroy expr orb
 with (other) {
     instance_destroy();
+    audio_play_sound(snd_expr, 6, false);
 }
 
 // Level up code
@@ -168,6 +171,7 @@ with (obj_player_stats){
 // Destroy expr orb
 with (other) {
     instance_destroy();
+    audio_play_sound(snd_expr, 6, false);
 }
 
 // Level up code

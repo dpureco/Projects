@@ -39,11 +39,23 @@ if (obj_input.attack) {
 
 if (obj_input.spell_key) {
     var p = instance_create(x, y, obj_projectile);
-    var xforce = lengthdir_x(20, face*90);
-    var yforce = lengthdir_y(20, face*90);
+    if (len == 0) {
+        dir = face * 90;
+    }
+    var xforce = lengthdir_x(20, dir);
+    var yforce = lengthdir_y(20, dir);
     p.creator = id;
+    p.damage = obj_player_stats.attack;
     with (p) {
         physics_apply_impulse(x, y, xforce, yforce);
+    }
+}
+
+// Swap weapon
+if (obj_input.swap_key) {
+    var nearest_weapon = instance_nearest(x, y, obj_weapon_item);
+    if (place_meeting(x, y+4, nearest_weapon)) {
+        scr_swap_weapon(nearest_weapon);
     }
 }
 
@@ -55,7 +67,7 @@ if (obj_input.xaxis == 0 && obj_input.yaxis == 0) {
     len = 0;
 } else {
     len = spd;
-    scr_get_face();
+    scr_get_face(dir);
 }
 
 // Get the hspd and vspd

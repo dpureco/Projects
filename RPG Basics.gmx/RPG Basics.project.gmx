@@ -4,7 +4,12 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_expr</sound>
+    <sound>sound\snd_player_takes_damage</sound>
+    <sound>sound\snd_sword_attack</sound>
+    <sound>sound\snd_enemy_die</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="Player Sprites">
       <sprite>sprites\spr_player_shadow</sprite>
@@ -20,16 +25,28 @@
     <sprites name="Helper Sprites">
       <sprite>sprites\spr_damage</sprite>
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_sign</sprite>
       <sprite>sprites\spr_player</sprite>
+      <sprite>sprites\spr_dialog_box</sprite>
       <sprite>sprites\spr_expr</sprite>
       <sprite>sprites\spr_health</sprite>
       <sprite>sprites\spr_door</sprite>
     </sprites>
     <sprites name="Enemy Sprites">
       <sprite>sprites\spr_enemy_slime</sprite>
+      <sprites name="Chinlin">
+        <sprite>sprites\spr_chinlin_run_right</sprite>
+        <sprite>sprites\spr_chinlin_run_up</sprite>
+        <sprite>sprites\spr_chinlin_stand_up</sprite>
+        <sprite>sprites\spr_chinlin_stand_right</sprite>
+        <sprite>sprites\spr_chinlin_stand_down</sprite>
+        <sprite>sprites\spr_chinlin_run_down</sprite>
+      </sprites>
     </sprites>
-    <sprite>sprites\spr_sign</sprite>
-    <sprite>sprites\spr_dialog_box</sprite>
+    <sprites name="Weapons">
+      <sprite>sprites\spr_sword</sprite>
+      <sprite>sprites\spr_axe</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_grass</background>
@@ -40,6 +57,7 @@
       <scripts name="Enemy Helper Scripts">
         <script>scripts\scr_enemy_choose_next_state.gml</script>
         <script>scripts\scr_check_for_player.gml</script>
+        <script>scripts\scr_move_axis.gml</script>
       </scripts>
       <script>scripts\scr_enemy_idle_state.gml</script>
       <script>scripts\scr_enemy_stall_state.gml</script>
@@ -59,8 +77,12 @@
     <scripts name="Speaking scripts">
       <script>scripts\scr_string_copy_words.gml</script>
     </scripts>
-    <script>scripts\scr_save_game.gml</script>
-    <script>scripts\scr_load_game.gml</script>
+    <scripts name="Game State">
+      <script>scripts\scr_load_game.gml</script>
+      <script>scripts\scr_save_game.gml</script>
+    </scripts>
+    <script>scripts\scr_animation_hit_frame.gml</script>
+    <script>scripts\scr_swap_weapon.gml</script>
   </scripts>
   <shaders name="shaders">
     <shader type="GLSLES">shaders\shader0.shader</shader>
@@ -76,6 +98,10 @@
       <object>objects\obj_wall</object>
       <object>objects\obj_input</object>
       <object>objects\obj_projectile</object>
+      <objects name="Weapons">
+        <object>objects\obj_weapon_animation</object>
+        <object>objects\obj_weapon_item</object>
+      </objects>
     </objects>
     <objects name="Player Objects">
       <object>objects\obj_player</object>
@@ -83,6 +109,7 @@
     </objects>
     <objects name="Enemy Objects">
       <object>objects\obj_enemy_slime</object>
+      <object>objects\obj_chinlin</object>
     </objects>
     <objects name="Dropped Objects">
       <object>objects\obj_expr</object>

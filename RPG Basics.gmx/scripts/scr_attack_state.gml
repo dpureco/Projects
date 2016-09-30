@@ -2,7 +2,14 @@
 image_speed = .5;
 movement = ATTACK;
 
-if (image_index >= 3 && attacked == false) {
+if (scr_animation_hit_frame(2)) {
+    var attack_animation = instance_create(x, y, obj_weapon_animation);
+    attack_animation.dir = face*90;
+    attack_animation.image_angle = (face*90)+45;
+    attack_animation.sprite_index = weapon_sprite;
+}
+
+if (scr_animation_hit_frame(3)) {
     var xx = 0;
     var yy = 0;
     switch (face) {
@@ -26,9 +33,8 @@ if (image_index >= 3 && attacked == false) {
             yy = y + 2;
             break;
     }
-
+    audio_play_sound(snd_sword_attack, 8, false);
     var damager = instance_create(xx,yy,obj_damage);
     damager.creator = id;
     damager.damage = obj_player_stats.attack;
-    attacked = true;
 }
