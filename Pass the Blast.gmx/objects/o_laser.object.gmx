@@ -28,6 +28,7 @@
             <string>/// Initialize lasers
 
 vspeed = -8;
+audio_play_sound(snd_laser, 5, false);
 instance_create(x, y, o_ship_flare);
 </string>
           </argument>

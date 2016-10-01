@@ -34,6 +34,40 @@ draw_set_font(f_score);
 // Play the music
 sound_global_volume(.25);
 audio_play_sound(msc_Space, 10, true);
+
+// Create particle system
+system = part_system_create();
+
+// Create particle types
+pt_smoke = create_part_type_sprite(s_smoke, true, 25, 30);
+pt_flare = create_part_type_sprite(s_explosion_part, true, 15, 20);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// Destroy particle systems
+
+part_system_destroy(system);
+part_type_destroy(pt_smoke);
+part_type_destroy(pt_flare);
 </string>
           </argument>
         </arguments>

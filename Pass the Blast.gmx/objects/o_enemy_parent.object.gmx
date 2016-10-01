@@ -61,7 +61,7 @@ if (y &gt; room_height + 16) {
 // Die Code
 if (armor &lt;= 0) {
     score += e_score;
-    instance_create(x, y, o_explosion);
+    create_explosion(x,y);
     audio_play_sound(snd_explode, 8, false);
     instance_destroy();
 }

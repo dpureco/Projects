@@ -45,6 +45,8 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\add_screenshake.gml</script>
+    <script>scripts\create_part_type_sprite.gml</script>
+    <script>scripts\create_explosion.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\f_score</font>
@@ -83,6 +85,7 @@
       <object>objects\o_ship_flare</object>
       <object>objects\o_smoke</object>
       <object>objects\o_screen_flash</object>
+      <object>objects\o_particle_creator</object>
     </objects>
     <objects name="Buttons">
       <object>objects\o_start_button</object>
